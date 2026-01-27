@@ -2,7 +2,7 @@
 en las que intervienen clientes y vendedores; a continuación, deberemos implementar funciones que nos permitan
  extraer información estadística.
 Se debe crear en el paquete llamado “bills” con la siguiente estructura:
-bills/
+bills/ 
         __init__.py
         entity.py
         item.py
