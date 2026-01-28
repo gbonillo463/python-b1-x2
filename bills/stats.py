@@ -1,4 +1,6 @@
 # Write your imports here
+from .item import Bill, Product
+from .entity import Buyer
 
 
 
@@ -13,15 +15,21 @@ class Statistics:
         # Do not change this method
         self.bills = bills
 
-    def find_top_sell_product(self) -> (Product, int):
-        # Write here your code
-        pass
+    def find_top_sell_product(self) -> tuple[Product, int]:
+        products_sells = {}
+        for bill in self.bills:
+            for product in bill.products:
+                products_sells[product] += product.quantity
+
+        resultado = sorted(products_sells.items(), key=lambda x:x[1], reverse=True)
+
+        return resultado[0]
 
     def find_top_two_sellers(self) -> list:
         # Write here your code
         pass
 
-    def find_buyer_lowest_total_purchases(self) -> (Buyer, float):
+    def find_buyer_lowest_total_purchases(self) -> tuple[Buyer, float]:
         # Write here your code
         pass
 
