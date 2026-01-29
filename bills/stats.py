@@ -15,11 +15,11 @@ class Statistics:
         # Do not change this method
         self.bills = bills
 
-    def find_top_sell_product(self) -> tuple[Product, int]:
+    def find_top_sell_product(self) -> (Product, int):
         products_sells = {}
         for bill in self.bills:
             for product in bill.products:
-                products_sells[product] += product.quantity
+                products_sells[product] = products_sells.get(product, 0) + 1
 
         resultado = sorted(products_sells.items(), key=lambda x:x[1], reverse=True)
 
@@ -29,7 +29,7 @@ class Statistics:
         # Write here your code
         pass
 
-    def find_buyer_lowest_total_purchases(self) -> tuple[Buyer, float]:
+    def find_buyer_lowest_total_purchases(self) -> (Buyer, float):
         # Write here your code
         pass
 
