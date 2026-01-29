@@ -31,11 +31,11 @@ class Buyer(Person):
 
 class Seller(Person):
     # Write the parameters in the next line
-    def __init__(self, dni, email, mobile, bussines_name: str, bussines_adress: str):
+    def __init__(self, dni, email, mobile, bussines_name: str, bussines_address: str):
         super().__init__(dni, email, mobile)
         # Write here your code        
         self.bussines_name = bussines_name
-        self.bussines_adress = bussines_adress
+        self.bussines_address = bussines_address
         
     def print(self):
         # Do not change this method
