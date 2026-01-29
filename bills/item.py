@@ -14,17 +14,17 @@ class TaxType(Enum):
 
 class Tax:
     # Write the parameters in the next line
-    def __init__(self, tax_id: str, tax_type: TaxType, percentatge: float):
+    def __init__(self, tax_id: str, tax_type: TaxType, percentage: float):
         # Write here your code
         self.tax_id = tax_id
         self.tax_type = tax_type
-        self.percentatge = percentatge
+        self.percentage = percentage
 
 
 class Product:
     # Write the parameters in the next line
     def __init__(self, 
-                prodcut_id: str,
+                product_id: str,
                 name: str, 
                 expiration_date: datetime, 
                 bar_code: str, 
@@ -33,7 +33,7 @@ class Product:
                 taxes: list[Tax]
                 ):
         # Write here your code
-        self.prodcut_id = prodcut_id
+        self.product_id = product_id
         self.name = name
         self.expiration_date = expiration_date
         self.bar_code = bar_code
@@ -42,7 +42,7 @@ class Product:
         self.taxes = taxes
 
     def calculate_tax(self, tax: Tax) -> float:
-        return (self.quantity * self.price) * tax.percentatge
+        return (self.quantity * self.price) * tax.percentage
 
     def calculate_total_taxes(self) -> float:
         total = 0
