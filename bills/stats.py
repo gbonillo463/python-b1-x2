@@ -37,8 +37,10 @@ class Statistics:
         for bill in self.bills:
             buyers[bill.buyer] = buyers.get(bill.buyer, 0) + bill.calculate_total()
         result = sorted(buyers.items(), key=lambda x:x[1])
-
+        
         return result[0]
+
+
 
     def order_products_by_tax(self, order_type: OrderType) -> tuple:
         # Write here your code
