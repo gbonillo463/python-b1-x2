@@ -42,7 +42,11 @@ class Product:
         self.taxes = taxes
 
     def calculate_tax(self, tax: Tax) -> float:
-        return (self.quantity * self.price) * tax.percentage
+        base = self.quantity * self.price
+        if tax.tax_type == TaxType.ISD:
+            return base * tax.percentage * ISD_FACTOR
+        else:
+            return base * tax.percentage
 
     def calculate_total_taxes(self) -> float:
         total = 0
